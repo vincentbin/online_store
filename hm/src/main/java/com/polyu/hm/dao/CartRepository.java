@@ -52,7 +52,7 @@ public class CartRepository {
      */
     public void insertItem(Integer bookId, Integer userId) {
         QueryWrapper<Cart> wrapper = new QueryWrapper<>();
-        wrapper.and(w -> w.eq("bookId", bookId))
+        wrapper.and(w -> w.eq("bookid", bookId))
                 .and(w -> w.eq("userid", userId));
         Cart cartItem = cartMapper.selectOne(wrapper);
         if (cartItem == null) {
@@ -64,5 +64,17 @@ public class CartRepository {
             return;
         }
         addItem(cartItem.getId());
+    }
+
+    /**
+     * 删除条目
+     * @param bookId
+     * @param userId
+     */
+    public void deleteItem(Integer bookId, Integer userId) {
+        QueryWrapper<Cart> wrapper = new QueryWrapper<>();
+        wrapper.and(w -> w.eq("bookid", bookId))
+                .and(w -> w.eq("userid", userId));
+        cartMapper.delete(wrapper);
     }
 }
