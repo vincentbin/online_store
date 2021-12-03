@@ -45,4 +45,12 @@ public class CartService {
     public void insertItem(Integer bookId, Integer userId) {
         cartRepository.insertItem(bookId, userId);
     }
+
+    /**
+     * 删除书
+     * @param bookId
+     */
+    public void deleteItem(Integer bookId, Integer userId) {
+        cartRepository.deleteItem(bookId, userId);
+    }
 }

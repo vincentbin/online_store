@@ -375,7 +375,7 @@
       <workItem from="1631587576213" duration="9189000" />
       <workItem from="1631760297689" duration="14745000" />
       <workItem from="1633054589201" duration="653000" />
-      <workItem from="1633056012733" duration="90917000" />
+      <workItem from="1633056012733" duration="97306000" />
     </task>
     <servers />
   </component>
@@ -394,5 +394,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="book" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
