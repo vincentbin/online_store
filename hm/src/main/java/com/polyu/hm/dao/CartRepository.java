@@ -29,8 +29,11 @@ public class CartRepository {
      * 减少库存
      * @param id
      */
-    public void reduceItem(Integer id) {
-        Cart cart = cartMapper.selectById(id);
+    public void reduceItem(Integer id, Integer userId) {
+        QueryWrapper<Cart> wrapper = new QueryWrapper<>();
+        wrapper.and(w -> w.eq("bookid", id))
+                .and(w -> w.eq("userid", userId));
+        Cart cart = cartMapper.selectOne(wrapper);
         cart.setSum(cart.getSum() - 1);
         cartMapper.updateById(cart);
     }
@@ -39,8 +42,11 @@ public class CartRepository {
      * 增加库存
      * @param id
      */
-    public void addItem(Integer id) {
-        Cart cart = cartMapper.selectById(id);
+    public void addItem(Integer id, Integer userId) {
+        QueryWrapper<Cart> wrapper = new QueryWrapper<>();
+        wrapper.and(w -> w.eq("bookid", id))
+                .and(w -> w.eq("userid", userId));
+        Cart cart = cartMapper.selectOne(wrapper);
         cart.setSum(cart.getSum() + 1);
         cartMapper.updateById(cart);
     }
@@ -63,7 +69,7 @@ public class CartRepository {
             cartMapper.insert(cart);
             return;
         }
-        addItem(cartItem.getId());
+        addItem(cartItem.getId(), userId);
     }
 
     /**

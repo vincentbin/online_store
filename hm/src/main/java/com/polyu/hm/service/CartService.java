@@ -26,16 +26,16 @@ public class CartService {
      * 减少库存
      * @param id
      */
-    public void reduceItem(Integer id) {
-        cartRepository.reduceItem(id);
+    public void reduceItem(Integer id, Integer userId) {
+        cartRepository.reduceItem(id, userId);
     }
 
     /**
      * 增加库存
      * @param id
      */
-    public void addItem(Integer id) {
-        cartRepository.addItem(id);
+    public void addItem(Integer id, Integer userId) {
+        cartRepository.addItem(id, userId);
     }
 
     /**

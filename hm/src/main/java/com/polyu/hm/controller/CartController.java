@@ -62,7 +62,7 @@ public class CartController {
             error.setCode(404);
             return error;
         }
-        cartService.reduceItem(req.getBookId());
+        cartService.reduceItem(req.getBookId(), currentUser.getId());
         return Result.success(true);
     }
 
@@ -74,7 +74,7 @@ public class CartController {
             error.setCode(404);
             return error;
         }
-        cartService.addItem(req.getBookId());
+        cartService.addItem(req.getBookId(), currentUser.getId());
         return Result.success(true);
     }
 
