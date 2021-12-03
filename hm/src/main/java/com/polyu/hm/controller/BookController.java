@@ -5,7 +5,6 @@ import com.polyu.hm.result.Result;
 import com.polyu.hm.service.BookService;
 import com.polyu.hm.vo.BookVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

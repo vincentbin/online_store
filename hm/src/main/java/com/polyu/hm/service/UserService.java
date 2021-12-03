@@ -116,4 +116,27 @@ public class UserService {
         }
         return true;
     }
+
+    /**
+     * 获取当前用户信息
+     * @param request
+     * @return
+     */
+    public User getCurrentUser(HttpServletRequest request) {
+        try {
+            Cookie[] cookies = request.getCookies();
+            for (Cookie cookie : cookies) {
+                if (COOKIE_NAME_TOKEN.equals(cookie.getName())) {
+                    String token = cookie.getValue();
+                    User user = (User) redisUtil.get(REDIS_USER_TOKEN_KEY_PREFIX + token);
+                    if (user != null) {
+                        return user;
+                    }
+                }
+            }
+        } catch (Exception e) {
+            return null;
+        }
+        return null;
+    }
 }

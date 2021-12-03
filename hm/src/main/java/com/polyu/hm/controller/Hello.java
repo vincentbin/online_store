@@ -12,7 +12,6 @@ public class Hello {
         return "index1";
     }
 
-
     @RequestMapping("/hello1")
     public String hello1(Model model) {
         return "index1";
