@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>在线书城-购物车</title>
+    <title>STORE-SHOPPING CART</title>
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
@@ -46,8 +46,8 @@
             <div class="container">
                 <div class="row">
                     <ul class="breadcrumb text-center">
-                        <li><a href="/index">Home</a></li>
-                        <li>购物车</li>
+                        <li><a href="home.html">Click Me to Home</a></li>
+                        <li>SHOPPING CART</li>
                     </ul>
 
                     <div class="divider">
@@ -59,39 +59,21 @@
                 <div class="row">
                     <table id="items" class="table table-hover">
                         <tr style="background-color: #00b5d1;color: #ffffff">
-                            <th id = "bkname">书名</th>
-                            <th id = "bkprice">单价</th>
-                            <th id = "bknumber">数量</th>
-                            <th id = "bksum">小计</th>
-                            <th>操作</th>
+                            <th id = "bkname">NAME</th>
+                            <th id = "bkprice">PRICE</th>
+                            <th id = "bknumber">NUMBER</th>
+                            <th id = "bksum">SUM</th>
+                            <th>OPERATION</th>
                         </tr>
-
-                        <!-- <tr th:each="cartitem : ${cart}">
-                            <td><b th:text="${cartitem.getBookname()}"></b></td>
-                            <td id="danjia" class="price" th:text="${cartitem.getPrice()}"></td>
-                            <td>
-                                <p class="bookid" style="display: none;" th:text="${cartitem.getId()}"></p>
-                                <button id="munis" onclick="minus(this)" class="btn b">-</button>
-                                <input disabled="true" onchange="change(this)" id="booknum" type="text" th:value="${cartitem.getNum()}"/>
-                                <button id="plus" onclick="plus(this)" class=" btn b">+</button>
-                                <p class="bookid" style="display: none;" th:text="${cartitem.getId()}"></p>
-                            </td>
-                            <td id="xiaoji" class="price" th:text="${cartitem.getAllprice()}"></td>
-                            <td>
-                                <p style="display: none;" th:text="${cartitem.getId()}"></p>
-                                <button onclick="del(this)" class="btn btn-sm btn-danger">删除</button>
-                            </td>
-                        </tr> -->
-
                     </table>
 
-                    <h4 class="pull-right">总计价格：<span id="allprice" class="price"
+                    <h4 class="pull-right">TOTAL PRICE<span id="allprice" class="price"
                                                       th:text="${(session.itemprices!=null?session.itemprices:0)}"></span>
                     </h4>
 
                 </div>
                 <div class="row">
-                    <button id="buy" onclick="buy()" class="pull-right btn btn-lg btn-warning">确认下单</button>
+                    <button id="buy" onclick="buy()" class="pull-right btn btn-lg btn-warning">CLICK TO SUBMIT</button>
                 </div>
                 <!--=====================所有书本信息展示 END====================-->
             </div><!-- /.container -->
@@ -106,60 +88,31 @@
 <script src="assets/js/jquery-1.11.2.min.js"></script>
 <script src="assets/js/overhang.min.js"></script>
 <script type="application/javascript">
-    //输入框改变
-//    function change(self) {
-//        //获得书本数量
-//        var booknum = parseInt($(self).val());
-//        var danjia = parseInt($(self).parent().prev("#danjia").html());
-//        if (booknum> 0) {
-//            var xiaoji = danjia * booknum;
-//            //修改小计
-//            $(self).parent().next("#xiaoji").html(xiaoji);
-//        } else {
-//            $(self).val(1);
-//            $(self).parent().next("#xiaoji").html(danjia);
-//        }
-//
-//    }
-
-    //增加
-
 
     var bkid;
-    // var test = [
-	// { "bkname":"chinese" , "bkprice":"12" , "bknum":"1" }, 
-	// { "bkname":"math" , "bkprice":"15" , "bknum":"1"  }, 
-	// { "bkname":"english" , "bkprice":"14" , "bknum":"2"  }
-    // ];
     $(function(){
 
         $.get("cart/items.json", function (data) {
             
             if(data.code == 404)
             {
-                alert("未登录！");
+                alert("NO LOGIN BEFORE！");
                 window.location.href="login.html";
             }
             else
             {
                 if (data.data) {
-                for(var i = 0;i < data.data.length; i ++){
-
-                
+            
                     var test = data.data;
                     var sum=0;
                     
                     for(var i=0; i<test.length; i++)
                     {  
-                    var x = document.createElement("TR");
-                    //var TRID = "myTr"+i;
-                    //x.setAttribute("id", TRID);                   
+                    var x = document.createElement("TR");                
                     bkid = test[i].bookId;
                     var total = test[i].sum * test[i].price;
                     sum+=total;
-                    // x.innerHTML =  "<td id='bktitle'>"+test[i].bkname+"</td>"+"<td id = 'bkprice'>"+test[i].bkprice+"</td>"+
-                    //     "<td id = 'bknum'>"+test[i].bknum+"</td>"+"<td id='bktotal'>"+total+"</td>";
-                    x.innerHTML =`                        <tr id = "`+test[i].bookId+`">
+                    x.innerHTML =`      <tr >
                                             <td><b ">`+test[i].bookName+`</b></td>
                                             <td id="danjia" class="price" >`+test[i].price+`</td>
                                             <td>
@@ -176,44 +129,31 @@
                                             </td>
                                         </tr>
                     `
-                    //document.getElementById("booknum").value=test[i].bknum;
                     x.style.fontSize=("20px");
                     x.style.color=("skyblue");
+                    x.setAttribute("id",bkid)
                     document.getElementById("items").appendChild(x);
-                    }
-                    // var y = document.createElement("TR");  //总计价格
-                    // y.id = "SumUp";
-                    // y.innerHTML= "<td></td>"+"<td></td>"+"<td></td>"+"<td></td>"+"<td>"+sum+"</td>";
-                    // document.getElementById("items").appendChild(y);
-                    document.getElementById("allprice").innerHTML = sum;                            
-                        
-                    
 
-                    
                     }
-                
+                    document.getElementById("allprice").innerHTML = sum;
                 }
             }
 
         }, "json");
-
-
     });
-
-
-
 
 
     function plus(self) {
         //获得书本数量
         var input = $(self).prev("input");
         var bookid = $(self).next(".bookid").html();
+        var bkid = self.parentNode.parentNode.id;
         console.log(bookid);
         var booknum = parseInt(input.val()) + 1;
         var danjia = parseFloat($(self).parent().prev("#danjia").html());
         var xiaoji = danjia * booknum;
         var allprice = parseFloat($("#allprice").html());
-        $.post("cart/add_item.do", {bookId:self.parentNode.parentNode.id});
+        $.post("cart/add_item.do", {bookId:bkid});
         //修改数量和小计
         $(self).parent().next("#xiaoji").html(xiaoji);
         input.val(booknum);
@@ -225,16 +165,15 @@
     function minus(self) {
         //获得书本数量
         var input = $(self).next("input");
+        var bkid = self.parentNode.parentNode.id;
         var bookid = parseInt($(self).prev(".bookid").html());
-        console.log(bookid);
         var booknum = parseInt(input.val()) - 1;
         var danjia = parseFloat($(self).parent().prev("#danjia").html());
         var xiaoji = danjia * booknum;
         var allprice = parseFloat($("#allprice").html());
         //修改数量和小计
         if (booknum != 0) {
-            $.post("cart/reduce_item.do", {bookId:self.parentNode.parentNode.id});
-            alert(self.parentNode.parentNode.id);
+            $.post("cart/reduce_item.do", {bookId:bkid});
             $(self).parent().next("#xiaoji").html(xiaoji);
             input.val(booknum);
             allprice -= danjia;
@@ -272,14 +211,14 @@
 //                显示返回状态信息
             if(data.code == 404)
             {
-                alert("未登录！");
+                alert("NO LOGIN BEFORE!");
                 window.location.href="login.html";
             }    
             else{
                 var id = self.parentNode.parentNode.id;
                 var obj = self.parentNode.parentNode;
                 obj.parentNode.removeChild(obj);
-                alert("添加成功！");
+                alert("SUCCESS！");
             }
             
         }, "json");
@@ -295,7 +234,7 @@
     }
     function success() {
         $('body').overhang({
-            message: "下单成功",
+            message: "SUBMIT SUCCESSFULLY",
             duration: 5,
             speed: 1000,
 //                closeConfirm: true

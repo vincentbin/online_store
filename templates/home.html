@@ -5,17 +5,14 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>在线书城</title>
-
+    <title>ONLINE BOOKSTORE</title>
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
     <link href="assets/css/main.min.css" rel="stylesheet"/>
-
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/images/favicon.ico"/>
-
     <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet'
           type='text/css'/>
     <link href='http://fonts.googleapis.com/css?family=Fira+Sans:400,300,300italic,400italic,500,500italic,700,700italic'
@@ -25,24 +22,55 @@
 
 <div id="wrapper">
     <div id="page-content-wrapper" class="st-pusher">
-
         <div class="st-pusher-after"></div>
         <!-- =============== HEADER ===================== -->
         <div th:replace="header :: header"></div>
         <!-- =============== HEADER : END =============== -->
-
         <div class="home-page">
             <div class="content">
-
                 <div class="home-slider outer-bottom-vs">
-
                     <!-- ========================================== SECTION â€?HERO : START ========================================= -->
                     <div id="hero">
-                        
                         <div id="owl-main" class="owl-carousel owl-theme">
-                            
                             <div class="item">
-                                <div class="clearfix slider-button hidden-xs fadeInDown-3" style="margin-top: 0px;margin-right: 0px;">
+                                <div class="clearfix slider-button hidden-xs fadeInDown-3" >
+                                    <a class="btn btn-primary btn-uppercase"  role="button" href="login.html">Login</a>
+                                </div> <!-- /.slider-price -->
+                                <div class="container">
+                                    <div class="content">
+                                        <div class="row">
+                                            <div class="col-md-7 col-sm-12 col-xs-12">
+                                                <div class="book-in-shelf">
+                                                    <div class="book-shelf">
+                                                        <div class="book-cover slider-book-cover bk-cover m-t-20">
+                                                            <img class="img-responsive" alt=""
+                                                                 src="assets/images/blank.gif"
+                                                                 data-echo="assets/images/slider-images/01.png"/>
+                                                            <div class="fade"></div>
+                                                        </div> <!-- /.book-cover -->
+                                                    </div><!-- /.book-shelf -->
+                                                </div><!-- /.book-in-shelf -->
+                                            </div><!-- /.col -->
+                                            <div class="col-md-5 col-sm-12 col-xs-12">
+                                                <div class="clearfix caption vertical-center text-left">
+                                                    <div class="slider-caption-heading">
+                                                        <h1 class="slider-title">
+                                                            <span class="fadeInDown-1 main">BOOKSTORE:</span>
+                                                            <span class="fadeInDown-2 sub">WELCOME TO BOOKSTORE!</span>
+                                                        </h1>
+                                                    </div><!-- /.slider-caption-heading -->
+                                                    <div class="clearfix slider-button hidden-xs fadeInDown-3">
+                                                        <a class="btn btn-primary btn-uppercase" role="button" href="books.html">ENTER BOOKSTORE</a>
+                                                        
+                                                    </div> <!-- /.slider-price -->
+                                                </div><!-- /.slider-caption -->
+                                            </div><!-- /.col -->
+                                        </div><!-- /.row -->
+                                    </div><!-- /.content.caption -->
+                                </div><!-- /.container -->
+                            </div><!-- /.item -->
+                            <div class="item">
+                                <div class="clearfix slider-button hidden-xs fadeInDown-3" style="padding-top: 0px;padding-right: 0px;">
                                     <a class="btn btn-primary btn-uppercase" role="button" href="login.html">Login</a>
                                 </div> <!-- /.slider-price -->
                                 <div class="container">
@@ -51,38 +79,36 @@
                                             <div class="col-md-7 col-sm-12 col-xs-12">
                                                 <div class="book-in-shelf">
                                                     <div class="book-shelf">
-                                                        <div class="book-cover slider-book-cover bk-cover m-t-20" style="border: solid 1px black; padding-top: 10px;">
+                                                        <div class="book-cover slider-book-cover bk-cover m-t-20">
                                                             <img class="img-responsive" alt=""
                                                                  src="assets/images/blank.gif"
-                                                                 data-echo="assets/images/slider-images/01.png"/>
+                                                                 data-echo="assets/images/slider-images/b2.jpg"/>
                                                             <div class="fade"></div>
                                                         </div> <!-- /.book-cover -->
                                                     </div><!-- /.book-shelf -->
                                                 </div><!-- /.book-in-shelf -->
                                             </div><!-- /.col -->
-
                                             <div class="col-md-5 col-sm-12 col-xs-12">
                                                 <div class="clearfix caption vertical-center text-left">
                                                     <div class="slider-caption-heading">
                                                         <h1 class="slider-title">
-                                                            <span class="fadeInDown-1 main">书城:</span>
-                                                            <span class="fadeInDown-2 sub">欢迎来到书的世界</span>
+                                                            <span class="fadeInDown-1 main">BOOKSTORE:</span>
+                                                            <span class="fadeInDown-2 sub">YOU CAN GET WHATEVER YOU WANT!</span>
                                                         </h1>
                                                     </div><!-- /.slider-caption-heading -->
                                                     <div class="clearfix slider-button hidden-xs fadeInDown-3">
-                                                        <a class="btn btn-primary btn-uppercase" role="button" href="/books">进入书城</a>
+                                                        <a class="btn btn-primary btn-uppercase" role="button" href="books.html">ENTER BOOKSTORE</a>
                                                     </div> <!-- /.slider-price -->
                                                 </div><!-- /.slider-caption -->
                                             </div><!-- /.col -->
-
-
                                         </div><!-- /.row -->
-
                                     </div><!-- /.content.caption -->
                                 </div><!-- /.container -->
                             </div><!-- /.item -->
-
                             <div class="item">
+                                <div class="clearfix slider-button hidden-xs fadeInDown-3" style="padding-top: 0px;padding-right: 0px;">
+                                    <a class="btn btn-primary btn-uppercase" role="button" href="login.html">Login</a>
+                                </div> <!-- /.slider-price -->
                                 <div class="container">
                                     <div class="content">
                                         <div class="row">
@@ -92,84 +118,38 @@
                                                         <div class="book-cover slider-book-cover bk-cover m-t-20">
                                                             <img class="img-responsive" alt=""
                                                                  src="assets/images/blank.gif"
-                                                                 data-echo="assets/images/slider-images/01.png"/>
+                                                                 data-echo="assets/images/slider-images/b8.jpg"/>
                                                             <div class="fade"></div>
                                                         </div> <!-- /.book-cover -->
                                                     </div><!-- /.book-shelf -->
                                                 </div><!-- /.book-in-shelf -->
                                             </div><!-- /.col -->
-
                                             <div class="col-md-5 col-sm-12 col-xs-12">
                                                 <div class="clearfix caption vertical-center text-left">
                                                     <div class="slider-caption-heading">
                                                         <h1 class="slider-title">
-                                                            <span class="fadeInDown-1 main">书城:</span>
-                                                            <span class="fadeInDown-2 sub">欢迎来到书的世界</span>
+                                                            <span class="fadeInDown-1 main">BOOKSTORE:</span>
+                                                            <span class="fadeInDown-2 sub">JUST ENJOY YOURSELF!</span>
                                                         </h1>
                                                     </div><!-- /.slider-caption-heading -->
                                                     <div class="clearfix slider-button hidden-xs fadeInDown-3">
-                                                        <a class="btn btn-primary btn-uppercase" role="button" href="/books">进入书城</a>
+                                                        <a class="btn btn-primary btn-uppercase" role="button" href="books.html">ENTER BOOKSTORE</a>
                                                     </div> <!-- /.slider-price -->
                                                 </div><!-- /.slider-caption -->
                                             </div><!-- /.col -->
-
-
                                         </div><!-- /.row -->
-
                                     </div><!-- /.content.caption -->
                                 </div><!-- /.container -->
                             </div><!-- /.item -->
-
-
-                            <div class="item">
-                                <div class="container">
-                                    <div class="content">
-                                        <div class="row">
-                                            <div class="col-md-7 col-sm-12 col-xs-12">
-                                                <div class="book-in-shelf">
-                                                    <div class="book-shelf">
-                                                        <div class="book-cover slider-book-cover bk-cover m-t-20">
-                                                            <img class="img-responsive" alt=""
-                                                                 src="assets/images/blank.gif"
-                                                                 data-echo="assets/images/slider-images/01.png"/>
-                                                            <div class="fade"></div>
-                                                        </div> <!-- /.book-cover -->
-                                                    </div><!-- /.book-shelf -->
-                                                </div><!-- /.book-in-shelf -->
-                                            </div><!-- /.col -->
-
-                                            <div class="col-md-5 col-sm-12 col-xs-12">
-                                                <div class="clearfix caption vertical-center text-left">
-                                                    <div class="slider-caption-heading">
-                                                        <h1 class="slider-title">
-                                                            <span class="fadeInDown-1 main">书城:</span>
-                                                            <span class="fadeInDown-2 sub">欢迎来到书的世界</span>
-                                                        </h1>
-                                                    </div><!-- /.slider-caption-heading -->
-                                                    <div class="clearfix slider-button hidden-xs fadeInDown-3">
-                                                        <a class="btn btn-primary btn-uppercase" role="button" href="books.html">进入书城</a>
-                                                    </div> <!-- /.slider-price -->
-                                                </div><!-- /.slider-caption -->
-                                            </div><!-- /.col -->
-
-
-                                        </div><!-- /.row -->
-
-                                    </div><!-- /.content.caption -->
-                                </div><!-- /.container -->
-                            </div><!-- /.item -->
-
-
                         </div><!-- /# owl-main -->
                     </div><!-- /#hero -->
                     <!-- ========================================== SECTION â€?HERO : END ========================================= -->
                 </div><!-- /.home-slider -->
-
                 <!-- ============================================== TESTIMONIAL ============================================== -->
                 <section class="customer-testimonial wow fadeInUp outer-bottom-xs light-bg">
                     <div id="testimonial" class="module container inner-top-xs">
                         <div class="module-heading home-page-module-heading">
-                            <h2 class="module-title home-page-module-title"><span>顾客支持</span></h2>
+                            <h2 class="module-title home-page-module-title"><span>Designer</span></h2>
                         </div><!-- /.module-heading -->
                         <div class="module-body">
                             <div class="row">
@@ -181,7 +161,7 @@
                                                     <div class="blockquote">
                                                         <div class="inner-left-xl">
                                                             <blockquote>
-                                                                <p>这家店真的不错，要常来！</p>
+                                                                <p>I LOVE THIS WEBSITE!</p>
                                                             </blockquote>
                                                         </div><!-- /.inner-left-xl -->
                                                     </div><!-- /.blockquote -->
@@ -191,14 +171,16 @@
                                                         <div class="row">
                                                             <div class="col-md-4 col-xs-5">
                                                                 <div class='image'>
+                                                                    <a href="http://106.53.139.161/personal/yanyibin.html">
                                                                     <img class="img-responsive"
                                                                          src="assets/images/testimonials/author1.png"
                                                                          alt=""/>
+                                                                    </a>
                                                                 </div><!-- /.image -->
                                                             </div><!-- /.col -->
                                                             <div class="col-md-8 col-xs-7">
-                                                                <h5 class="author-name outer-top-xs">知名砖家</h5>
-                                                                <span>黄大仙</span>
+                                                                <h5 class="author-name outer-top-xs">vincent</h5>
+                                                                <span>YanYiBin</span>
                                                             </div><!-- /.col -->
                                                         </div><!-- /.row -->
                                                     </div><!-- /.col -->
@@ -212,7 +194,7 @@
                                                     <div class="blockquote">
                                                         <div class="inner-left-xl">
                                                             <blockquote>
-                                                                <p>这家店很棒啊，不来悔一生！</p>
+                                                                <p>THE BOOK STORE IS SO COOL!</p>
                                                             </blockquote>
                                                         </div><!-- /.inner-left-xl -->
                                                     </div><!-- /.blockquote -->
@@ -222,30 +204,29 @@
                                                         <div class="row">
                                                             <div class="col-md-4 col-xs-5">
                                                                 <div class='image'>
+                                                                    <a href="./personalinfo/index.html">
                                                                     <img class="img-responsive"
                                                                          src="assets/images/testimonials/author2.png"
                                                                          alt=""/>
+                                                                        </a>
                                                                 </div><!-- /.image -->
                                                             </div><!-- /.col -->
                                                             <div class="col-md-8 col-xs-7">
-                                                                <h5 class="author-name outer-top-xs">知名叫兽</h5>
-                                                                <span>张小明</span>
+                                                                <h5 class="author-name outer-top-xs">uzhhhs</h5>
+                                                                <span>LUOHAO</span>
                                                             </div><!-- /.col -->
                                                         </div><!-- /.row -->
                                                     </div><!-- /.col -->
                                                 </div><!-- /.row -->
                                             </div><!-- /.testimonial-block -->
-
                                         </div><!-- /.col -->
                                     </div><!-- /.row -->
                                 </div><!-- /.col -->
-
                             </div><!-- /.row -->
                         </div><!-- /.module-body -->
                     </div><!-- /.module -->
                 </section>
                 <!-- ============================================== TESTIMONIAL : END ============================================== -->
-
                 <!-- ============================================== FOOTER ============================================== -->
                 <div th:replace="footer  :: footer"></div>
                 <!-- ============================================== FOOTER : END ============================================== -->

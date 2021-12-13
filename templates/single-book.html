@@ -36,8 +36,8 @@
             <div class="container">
                 <div class="row">
                     <ul class="breadcrumb text-center">
-                        <li><a href="/index">Home</a></li>
-                        <li><a href="/books">Books</a></li>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="books.html">Books</a></li>
                         <li class="active">书本详情</li>
                     </ul>
 
@@ -91,7 +91,7 @@
                                         </div>
                                         <div class="col-md-9">
                                             <div class="add-cart-button btn-group">
-                                                <button class="btn btn-single btn-sm" type="button"
+                                                <button class="btn btn-single btn-sm" type="button" onclick="addcart(this)"
                                                         data-toggle="dropdown">
                                                     <img src="assets/images/add-to-cart.png" alt=""/>
                                                 </button>
@@ -165,18 +165,6 @@
         }, "json");
     });
 
-
-    // function addcart(self) {
-    //     var bookid = $(self).attr("name");
-    //     success();
-    //     $.post("/post/addcart.do",{bookid:bookid},function(data){
-    //         if(data.code == 200){
-    //             success();
-    //         }else {
-    //             error();
-    //         }
-    //     });
-    // }
     function addcart(self){
         var name = $("#bkname").val();
         var price = $("#bkprice").val();

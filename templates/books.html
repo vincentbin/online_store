@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>在线书城-所有书籍</title>
+    <title>ONLINE BOOK STORE</title>
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -31,10 +31,12 @@
         <div class="content wow fadeInUp">
           <div class="container">
             <div class="row">
-              <ul class="breadcrumb text-center">
-                <li><a href="/index">Home</a></li>
-                <li>Books</li>
-              </ul>
+              <div class="breadcrumb text-center">
+                <div><a class="btn btn-primary btn-uppercase"  href="home.html">Back to Home</a></div></br>
+                <div><a class="btn btn-primary btn-uppercase" href="cart.html">View cart</a></div>
+                
+              </div>
+
 
               <div class="divider">
                 <img
@@ -45,13 +47,12 @@
               </div>
               <!-- /.divider -->
             </div>
-
             <!--=====================所有书本信息展示 START====================-->
             <section class="best-seller wow fadeInUp">
               <div id="best-seller" class="module">
                 <div class="module-heading home-page-module-heading">
                   <h2 class="module-title home-page-module-title">
-                    <span>所有书籍</span>
+                    <span>ALL BOOKS</span>
                   </h2>
                 </div>
                 <!-- /.module-heading -->
@@ -59,84 +60,6 @@
                 <div class="module-body">
                   <div class="row books full-width">
                     <div class="clearfix text-center" id="test">
-
-
-
-                        <!-- <div class="col-md-3 col-sm-6" style="border: solid 1px black;">
-                            <div class="book">
-                              <a href="single-book.html">
-                                <div class="book-cover">
-                                  <img
-                                    width="140"
-                                    height="212"
-                                    alt=""
-                                    src="assets/images/blank.gif"
-                                    data-echo="assets/images/book-covers/01.jpg"
-                                  />
-                                  <div class="tag">
-                                    <span>sale</span>
-                                  </div>
-                                </div>
-                              </a>
-                              <div class="book-details clearfix">
-                                <div class="book-description">
-                                  <h3 class="book-title">
-                                    <a href="single-book.html"
-                                     >The Brief Wondrous Life of Oscar Wao</a
-                                   >
-                                  </h3>
-                                  <p class="book-subtitle">
-                                    by
-                                    <a href="single-book.html"> Cormac McCarthy</a>
-                                  </p>
-                                </div>
-                                <div class="text-center">
-                                  <div class="actions">
-                                    <span class="book-price price">$14.75</span>
-                                    <div class="cart-action">
-                                      <a
-                                        class="add-to-cart"
-                                        title="Add to Cart"
-                                        href="javascript:void(0);"
-                                       >Add to Cart</a
-                                     >
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 col-sm-6"  style="border: solid 1px black; ">
-                            <div class="book" id="book" style="border: solid 1px black; ">
-                                <a href="single-book.html">
-                                    <div class="book-cover" id="book-cover">
-                                        <img stylewidth="140" height="212" alt=""
-                                             src="assets/images/blank.gif"
-                                             data-echo="assets/images/book-covers/01.jpg" />
-                                    </div>
-                                </a>
-                                <div class="book-details clearfix" id="book-details">
-                                    <div class="book-description" id="book-description">
-                                        <h3 class="book-title"><a href="single-book.html">Wonder
-                                            Hardcover</a></h3>
-                                        <p class="book-subtitle">by <a href="single-book.html"> R. J.
-                                            Palacio</a></p>
-                                    </div>
-                                    <div class="text-center" id="text-center">
-                                        <div class="actions" id="actions">
-                                            <span class="book-price price">$9.59</span>
-                                            <div class="cart-action" id="cart-action">
-                                                <a class="add-to-cart" title="Add to Cart"
-                                                   href="single-book.html">Add to Cart</a>
-                            
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-
                     </div>
                   </div>
                 </div>
@@ -155,11 +78,7 @@
       <!-- /.st-pusher -->
     </div>
     <!-- /#wrapper -->
-
-
-
-
-    
+  
     <script src="assets/js/jquery-1.11.2.min.js"></script>
     <script src="assets/js/overhang.min.js"></script>
     <script type="application/javascript">
@@ -195,8 +114,6 @@
           var price = book.price;
           var priceoff = book.priceOff;
           //alert(id+" "+bookname+" "+author+" "+publisher+" "+description+" "+img );
-
-          
           var div = document.createElement("div");
           div.setAttribute("class","col-md-3 col-sm-6");
           div.setAttribute("style", "margin-bottom: 100px");
@@ -205,9 +122,11 @@
             <div class="book" id="book" ">
                 <a href="single-book.html">
                     <div class="book-cover" id="book-cover">
+                      <a href="single-book.html?bkid=" + `+id+`+ '='">
                         <img class="bkpicture"  id = "bkimg" stylewidth="140" height="212" alt=""
                             src="assets/images/blank.gif"
                             data-echo="` + img + `" style="text-align:center;/>
+                            </a>
                     </div>
                 </a>
                 <div class="book-details clearfix" id="book-details">
@@ -219,11 +138,11 @@
                         </p>
                     </div>
                     <div class="text-center" id="text-center">
-                        <div class="actions" id="actions">
-                            <span class="book-price price" id="bkpriceID">$9.59</span>   <!--book price-->
+                        <div class="actions" id="actions">                       
+                          <span class="book-price price" id="bkpriceID">$9.59</span>   <!--book price-->
                             <div class="cart-action" id="cart-action">
-                                <a class="add-to-cart" title="Add to Cart"
-                                  href="single-book.html">Add to Cart</a>
+                                <a class="add-to-cart" id="bkid-addcart" title="Add to Cart"
+                                  onClick="addcart(this)">Add to Cart</a>
                             </div>
                         </div>
                     </div>
@@ -243,126 +162,30 @@
           document.getElementById("bkwriterID").id = i;
           document.getElementById("bkpriceID").id = i;
           document.getElementById("bkimg").id = i;
+          document.getElementById("bkid-addcart").id=id;
         }
-
-
-      }
-
-
-
-      function add1() {
-        var book = document.createElement("div");
-        var bookcover = document.createElement("div");
-        var bookdetails = document.createElement("div");
-        var bookdes = document.createElement("div");
-        var textcenter = document.createElement("div");
-        var action = document.createElement("div");
-        var cartaction = document.createElement("div");
-        book.innerHTML = '<a href="single-book.html">';
-        bookcover.innerHTML =
-          '<img width="140" height="212" alt="" src="assets/images/blank.gif" data-echo="assets/images/book-covers/03.jpg"/>';
-        bookdetails.innerHTML = "";
-        bookdes.innerHTML =
-          '<h3 class="book-title"><a href="single-book.html">Wonder Hardcover</a></h3> <p class="book-subtitle">by <a href="single-book.html"> R. J. Palacio</a></p>';
-        textcenter.innerHTML = "";
-        action.innerHTML = '<span class="book-price price">$9.59</span>';
-        cartaction.innerHTML =
-          '<a class="add-to-cart" title="Add to Cart" href="single-book.html">Add to Cart</a>';
-        document
-          .getElementById(book)
-          .insertBefore(
-            bookcover,
-            document.getElementById(book).firstElementChild
-          );
-        document
-          .getElementById(book)
-          .insertBefore(
-            bookdetails,
-            document.getElementById(book).firstElementChild
-          );
-        document
-          .getElementById(bookdetails)
-          .insertBefore(
-            bookdes,
-            document.getElementById(bookdetails).firstElementChild
-          );
-        document
-          .getElementById(bookdetails)
-          .insertBefore(
-            textcenter,
-            document.getElementById(bookdetails).firstElementChild
-          );
-        document
-          .getElementById(textcenter)
-          .insertBefore(
-            action,
-            document.getElementById(textcenter).firstElementChild
-          );
-        document
-          .getElementById(action)
-          .insertBefore(
-            cartaction,
-            document.getElementById(action).firstElementChild
-          );
-      }
-
-      function add() {
-        var div = document.createElement("div");
-        div.innerHTML = `<div class="col-md-3 col-sm-6  style="border: solid 1px black;padding-top: 10px;">
-<div class="book" id="book" style="border: solid 1px black; ">
-    <a href="single-book.html">
-        <div class="book-cover" id="book-cover">
-            <img stylewidth="140" height="212" alt=""
-                 src="C:/Users/uzh/Desktop/bookshop-master/src/main/resources/templates/assets/images/blank.gif"
-                 data-echo="C:/Users/uzh/Desktop/bookshop-master/src/main/resources/templates/assets/images/book-covers/01.jpg" style="text-align:center;/>
-        </div>
-    </a>
-    <div class="book-details clearfix" id="book-details">
-        <div class="book-description" id="book-description">
-            <h3 class="book-title"><a href="single-book.html">Wonder
-                Hardcover</a></h3>
-            <p class="book-subtitle">by <a href="single-book.html"> R. J.
-                Palacio</a></p>
-        </div>
-        <div class="text-center" id="text-center">
-            <div class="actions" id="actions">
-                <span class="book-price price">$9.59</span>
-                <div class="cart-action" id="cart-action">
-                    <a class="add-to-cart" title="Add to Cart"
-                       href="single-book.html">Add to Cart</a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>`;
-        //div.style.textAlign = "center";
-        //var test = document.getElementsByClassName("clearfix text-center");
-        //document.test.insertBefore(div, document.test.firstElementChild);
-        //document.test.insertBefore(div);
-        document.getElementById("test").appendChild(div);
       }
       //添加到购物车
       function addcart(self) {
-        var bookid = $(self).attr("name");
-        $.post("/post/addcart.do", { bookid: bookid }, function (data) {
-          if (data.code == 200) {
-            success();
-          } else {
-            error();
-          }
-        });
+        var id = self.id;
+        $.post("cart/insert_item.do", {bookId: id}, function (data) {
+//                显示返回状态信息
+            if(data.code == 404)
+            {
+                alert("未登录！");
+                window.location.href="login.html";
+            }    
+            else{
+                alert("添加成功！");
+            }
+            
+        }, "json");
       }
       function onClick(t){
-        //var num = $(self).val();
-        //var bktitle = document.getElementsByClassName("bktitle");
-        //var bkt = document.getElementById()
-        //alert(bktitle[0].innerHTML);
+
         var bkwriter = document.getElementsByClassName("bkwriter");
         //alert(bkwriter[0].innerHTML);
         var bkprice = document.getElementsByClassName("book-price");
-        var bk
         //console.log(window.location.href=encodeURI(location.origin+"/single-book.html?bktitle=" + bktitle[0].innerHTML +"&bkwriter=" + bkwriter[0].innerHTML+ "&bkprice=" + bkprice[0].innerHTML));
         //window.location.href=encodeURI("single-book.html?bktitle=" + bktitle[0].innerHTML +"=bkwriter=" + bkwriter[0].innerHTML+ "=bkprice=" + bkprice[0].innerHTML+"=");
         window.location.href=encodeURI("single-book.html?bkid=" + t.id+ '=' + t.bookName);
