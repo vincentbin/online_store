@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HmApplication {
 
     public static void main(String[] args) {
+        // Yan
         SpringApplication.run(HmApplication.class, args);
     }
 
